@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> POTENCIAS </title>
+    <script src="funciones.js"></script>
+</head>
+
+<body>
+    <h1> Calculadora de potencias </h1>
+
+    <div>
+        <label for="base"> Introduce la base: </label>
+        <input type="number" id="base" required>
+        <br><br>
+
+        <label for="exponente"> Introduce el exponente: </label>
+        <input type="number" id="exponente" required>
+        <br><br>
+
+        <button onclick="calcularPotencia()"> Calcular </button>
+    </div>
+    <br>
+    <div class="output" id="resultado"></div>
+</body>
+
+</html>
