@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Location & history </title>
+    <script src="funciones.js"></script>
+</head>
+
+<body>
+    <p>4a. Define un enlace que se desplaza hasta una línea en la que existe un marcador. El marcador está en un enlace
+        que si se activa muestra el nombre de este.</p>
+    <!-- enlace que nos desplaza al marcador -->
+    <p><a href="#marcador">Ir al marcador</a></p>
+
+    <!-- marcador posicionado -->
+    <div id="marcador">
+        <a href="#" onclick="nombreMarcador()">Ver el nombre del marcador</a>
+    </div>
+
+    <p id="nombreMarcador"></p>
+
+
+    <p>4b. Indica el nombre del host en el que está publicada la página que estamos viendo.</p>
+    <input type="button" value="Mostrar host actual" onclick="miHost()">
+    <p id="mostrarHost"></p>
+
+    <p>4c. Devuelve la URL completa de la página actual.</p>
+    <input type="button" value="Mostrar URL actual" onclick="miURL()">
+    <p id="mostrarURL"></p>
+
+    <p>4d. Pregunta por una dirección y la activas en el navegador actual.</p>
+    <input type="button" value="Moverse de dirección" onclick="moverDireccion()">
+
+    <p>4e. Indica el protocolo que se está utilizando en la página actual.</p>
+    <input type="button" value="Mostrar protocolo actual" onclick="miProtocolo()">
+    <p id="mostrarProtocolo"></p>
+
+    <p>4f. Crea un enlace que al activarlo recarga de nuevo la página.</p>
+    <input type="button" value="Recargar página actual" onclick="window.location.reload()">
+
+</body>
+
+</html>

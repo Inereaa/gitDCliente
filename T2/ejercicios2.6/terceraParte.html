@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Objeto document </title>
+    <script src="funciones.js"></script>
+</head>
+
+<body>
+    <p>5a. Escribe en el documento la fecha de la última actualización.</p>
+    <input type="button" value="Última actualización" onclick="ultimaActualizacion()">
+    <p id="ultimaActualizacion"></p>
+
+    <p>5b. Muestra la URL desde la cual se ha activado el enlace que ha llevado al usuario hasta el documento actual.</p>
+    <input type="button" value="URL padre" onclick="mostrarURLpadre()">
+    <p id="URLpadre"></p>
+
+    <p>5c. Muestra el título del documento actual.</p>
+    <input type="button" value="Mostrar título actual" onclick="mostrarTitulo()">
+    <p id="titulo"></p>
+
+    <p>5d. Muestra la dirección URL completa.</p>
+    <input type="button" value="Mostrar URL actual" onclick="miURL()">
+    <p id="mostrarURL"></p>
+
+    <p>5e. Un documento se abre automáticamente cuando empieza a cargarse y se cierra cuando
+        termina de hacerlo. Así pues, si deseamos escribir en un documento sin sobreescribir su
+        contenido, deberemos hacerlo antes de que éste termine de cargar. Si lo hacemos después,
+        sobreescribiremos su contenido. Implementa dos ejemplos que lo demuestren.
+    </p>
+    <input type="button" value="Ejemplo 1: Escribir antes de cargar" onclick="ejemplo1()">
+    <input type="button" value="Ejemplo 2: Sobreescribir después de cargar" onclick="ejemplo2()">
+
+
+    <p>6a. Muestra el número de anclas que tiene el documento.</p>
+    <a href="#">Ejemplo de ancla nº1</a><br>
+    <a href="#">Ejemplo de ancla nº2</a><br>
+    <input type="button" value="Nº de anclas" onclick="contarAnclas()">
+    <p id="resultadoAnclas"></p>
+
+    <p>6b. Muestra el texto dentro del tag del primer ancla (innerHTML).</p>
+    <input type="button" value="Texto del 1er ancla" onclick="textoPrimerAncla()">
+    <p id="primerAncla"></p>
+
+    <img src="https://via.placeholder.com/150" alt="Imagen 1" id="imagen1">
+
+    <p>6c. Muestra el número de imágenes del documento.</p>
+    <input type="button" value="Número de imagenes" onclick="numeroImagenes()">
+    <p id="imagenes"></p>
+
+    <p>6d. Muestra el id de la primera imagen.</p>
+    <input type="button" value="ID de la imagen nº1" onclick="idPrimeraImagen()">
+    <p id="idIMG1"></p>
+
+    <p>6e. Muestra el número de enlaces del documento.</p>
+    <input type="button" value="Número de enlaces" onclick="numeroEnlaces()">
+    <p id="enlaces"></p>
+
+    <p>6f. Cambia el título del documento.</p>
+    <input type="button" value="Cambiar título" onclick="cambiarTitulo()">
+</body>
+
+</html>

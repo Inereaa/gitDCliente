@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Geolocalización </title>
+
+    <!-- hay que incluir la librería 'Leaflet' y su CSS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 400px; /* altura del mapa */
+            width: 100%; /* para que el ancho ocupe toda la página */
+        }
+    </style>
+</head>
+
+<body>
+    <p>¿Quieres saber tu ubicación actual?</p>
+    <button onclick="mostrarUbicacion()">Sí, quiero saberla</button><br><br><br>
+
+    <div id="map"></div> <!-- contenedor para poner el mapa -->
+
+    <script>
+        // se inicializa el mapa y se establece una vista predeterminada
+        var map = L.map('map').setView([0, 0], 2); // esta es la posición inicial: [latitud, longitud], nivel de zoom
+
+        // se carga el mapa desde 'OpenStreetMap'
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // esta función es la que ya obtiene mi ubicación y la muestra en el mapa
+        function mostrarUbicacion() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+
+                    // se actualiza el mapa a la ubicación del usuario
+                    map.setView([lat, lon], 13);
+
+                    // así se agrega un marcador en la ubicación del usuario (para que quede más bonito)
+                    L.marker([lat, lon]).addTo(map)
+                        .bindPopup('Estás aquí').openPopup();
+                });
+            } else {
+                alert('Tu navegador no soporta la geolocalización.');
+            }
+        }
+    </script>
+
+</body>
+</html>

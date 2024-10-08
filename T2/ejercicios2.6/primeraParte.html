@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Navigator, screen & window </title>
+    <script src="funciones.js"></script>
+</head>
+
+<body>
+    <p>1. Muestra, maquetada en una tabla HTML toda la información que puedas extraer mediante JavaScript del navegador cliente.</p>
+    <input type="button" value="Tabla info. navegador cliente" onclick="mostrarInfoNavegador()">
+    <p id="tabla"></p>
+
+    <p>2. Realiza lo mismo para la información de la pantalla utilizada por el cliente.</p>
+    <input type="button" value="Tabla info. pantalla cliente" onclick="mostrarInfoPantalla()">
+    <p id="tabla2"></p>
+
+    <p>3a. Abre una ventana de confirmación, mostrando que opción ha pulsado el usuario.</p>
+    <input type="button" value="Confirmar" onclick="ventanaConfirmacion()">
+
+    <p>3b. Abre una ventana y después analiza si esta se ha cerrado o no.</p>
+    <input type="button" value="Abrir ventana" onclick="seHaCerrado()">
+    <p id="cerrada"></p>
+
+    <p>3c. Abre una ventana y pide al usuario un nuevo nombre para ella.</p>
+    <input type="button" value="Pedir título" onclick="pedirTitulo()">
+
+    <p>3d. El primer enlace permite cerrar la ventana actual y el segundo cierra una ventana abierta con el método
+        open() en la variable ventanaNueva.</p>
+    <input type="button" value="Cerrar ventana actual" onclick="window.close()">
+    <input type="button" value="Abrir ventana nueva" onclick="cerrarActualYPopUp()">
+    <p id="boton"></p>
+
+    <p>3f. Abre una ventana de un tamaño de 300x100 que puede ser cambiada de tamaño.</p>
+    <input type="button" value="Abrir ventana 300x100" onclick="ventanaTamaño()">
+
+    <p>3g. Mejora el apartado f. para que escriba algún texto en la página padre.</p>
+    <input type="button" value="Abrir ventana 300x100" onclick="ventanaTamañoMejorada()">
+    <p id="desdeEmergente"></p>
+
+    <p>3h. Mueve la ventana 50 pixeles hacia abajo y hacia la derecha al activar el enlace.</p>
+    <input type="button" value="Crear ventana" onclick="crearVentana()">
+    <p id="mover"></p>
+
+    <p>3i. Provoca que la ventana se sitúe en una posición concreta de la pantalla.
+        El punto de referencia es la esquina superior izquierda de la ventana del navegador y de la pantalla del
+        ordenador.</p>
+    <input type="button" value="Crear ventana" onclick="ventanaArribaIzquierda()">
+    <p id="aIzq"></p>
+
+    <p>3j. Mueve la barra de desplazamiento 10 pixeles hacia abajo.</p>
+    <input type="button" value="Mover 10px" onclick="window.scrollBy(0, 10)">
+
+    <p>3k. Desplaza la barra de desplazamiento a una determinada posición.</p>
+    <input type="button" value="Mover página" onclick="window.scrollTo(0, 100)">
+
+</body>
+
+</html>
