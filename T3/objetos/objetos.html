@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Objetos </title>
+    <script src="funciones.js"></script>
+</head>
+<body>
+    <script>
+        console.log(persona.esMayorDeEdad());
+        
+
+        console.log("Edad promedio: " + edadPromedio(personas));
+        
+
+        const punto1 = new Punto(2, 2);
+        const punto2 = new Punto(3, 3);
+        const recta = new Recta(punto1, punto2);
+        console.log(recta);
+
+
+        const casa1 = new Casa("Calle Mayor", 12, "28001");
+        casa1.setNumero(15);
+        casa1.setCalle("Calle de la Libertad");
+
+
+        let colegio = new Colegio("Atalaya", 10, 5);
+        console.log(colegio.consultarNotaMedia(2));
+        console.log(colegio.modificarNotaMedia(2, 8.50));
+        console.log(colegio.consultarNotaMedia(2));
+        // media de un alumno que no existe
+        console.log(colegio.consultarNotaMedia(5));
+    </script>
+</body>
+</html>
