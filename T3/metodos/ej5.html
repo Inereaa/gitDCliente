@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Saddle points </title>
+</head>
+<body>
+    <script>
+        const matriz = [
+        [10, 20, 30, 40, 50],
+        [15, 25, 35, 45, 55],
+        [20, 30, 10, 60, 70],
+        [25, 35, 45, 5, 65],
+        [30, 40, 50, 60, 70]
+        ];
+
+        let hayPuntoSilla = false;
+
+        matriz.forEach((fila, i) => {
+            // encuentra el valor máximo en la fila actual
+            const maxFila = Math.max(...fila);
+
+            fila.forEach((valor, j) => {
+                // si el valor NO es el máximo de su fila, NO es un 'saddle point'
+                if (valor !== maxFila) return;
+
+                // encontrar el valor mínimo de la columna actual
+                const minColumna = matriz.reduce((min, fila) => Math.min(min, fila[j]), matriz[0][j]);
+
+                // si el valor es el menor en la columna y el mayor en la fila, es un 'saddle point'
+                if (valor === minColumna) {
+                    document.write("'Saddle point' encontrado en la posición ("+i+","+j+") con valor "+valor+"<br>");
+                    hayPuntoSilla = true;
+                }
+            });
+        });
+
+        // mensaje sencillo por si en la matriz NO hubiera 'saddle points'
+        if (!hayPuntoSilla) {
+            document.write("No hay puntos de silla");
+        }
+    </script>
+</body>
+</html>

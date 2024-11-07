@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Métodos de arrays </title>
+</head>
+<body>
+    <script>
+        // El número mayor
+        const mayor = [1, 2, 3];
+        document.write(Math.max(...mayor) + "<br>");
+
+        // La cadena más larga
+        const larga = ["hola", "buenos días", "bye"];
+        document.write(larga.reduce((acc, val) => acc.length > val.length ? acc : val, '') + "<br>");
+
+        // Números pares e impares
+        const oddEven = [1, 2, 3, 4, 5, 6];
+        // Impares
+        document.write(oddEven.filter(number => number % 2 !== 0) + "<br>");
+        // Pares
+        document.write(oddEven.filter(number => number % 2 == 0) + "<br>");
+        
+        // Palabras que contengan 'is'
+        const conIs = ["this", "is", "a", "simple", "test"];
+        document.write(conIs.filter(palabra => palabra.includes("is")) + "<br>");
+
+        // Todos divisibles por 3
+        const numeros = [3, 6, 9, 12];
+        document.write(numeros.every(num => num % 3 == 0) + "<br>");
+
+        // Juntar dos arrays
+        const zip1 = [5, 2, 8];
+        const zip2 = [3, 7, 1];
+        document.write(zip1.concat(zip2) + "<br>");
+
+        // Juntar dos arrays ordenados de menor a mayor
+        const zipor1 = [5, 2, 8];
+        const zipor2 = [3, 7, 1];
+        document.write(zipor1.concat(zipor2).sort((a, b) => a - b) + "<br>");
+
+        // Array quitando la primera palabra
+        const sinPrimera = ["hola", "buenos", "días"];
+        document.write(sinPrimera.slice(1) + "<br>");
+
+        // Array añadiendo una palabra al principio
+        const conPrimera = ["buenos", "días"];
+        conPrimera.unshift("hola");
+        document.write(conPrimera + "<br>");
+
+        // Reemplazando algunos elementos
+        const reemplazar = ["hola", "buenas", "tardes"];
+        reemplazar.splice(2, 1, "noches"); // reemplazo 'tardes' por 'noches'
+        document.write(reemplazar + "<br>");
+    </script>
+</body>
+</html>

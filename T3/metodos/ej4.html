@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Mapa del tesoro RANDOM </title>
+</head>
+<body>
+    <script>
+        function generarMapaDelTesoro(filas, columnas) {
+            let mapaDelTesoro = Array.from({ length: filas }, () => Array(columnas).fill(0));
+    
+            // para generar una posición aleatoria dentro del mapa
+            function obtenerPosicionAleatoria() {
+                return {
+                    fila: Math.floor(Math.random() * filas),
+                    columna: Math.floor(Math.random() * columnas)
+                };
+            }
+    
+            // para verificar si una celda ya tiene un valor
+            function verificarRepetidos(valor) {
+                for (let i = 0; i < filas; i++) {
+                    for (let j = 0; j < columnas; j++) {
+                        if (mapaDelTesoro[i][j] === valor) {
+                            return true; // si SÍ está repetido
+                        }
+                    }
+                }
+                return false; // si NO está repetido
+            }
+    
+            // se genera el mapa del tesoro asegurándonos de que no haya celdas repetidas
+            for (let i = 0; i < filas; i++) {
+                for (let j = 0; j < columnas; j++) {
+                    let siguientePosicion;
+                    let valor;
+                    
+                    // aseguro que el valor sea único en la celda
+                    do {
+                        siguientePosicion = obtenerPosicionAleatoria();
+                        valor = (siguientePosicion.fila + 1) * 10 + (siguientePosicion.columna + 1);
+                    } while (verificarRepetidos(valor));
+                    
+                    mapaDelTesoro[i][j] = valor; // Colocamos el valor en la celda
+                }
+            }
+    
+            // coloco el tesoro de manera aleatoria en una celda
+            let filaTesoro = Math.floor(Math.random() * filas);
+            let columnaTesoro = Math.floor(Math.random() * columnas);
+    
+            // la celda del tesoro contiene un valor que corresponde a su propia posición
+            mapaDelTesoro[filaTesoro][columnaTesoro] = (filaTesoro + 1) * 10 + (columnaTesoro + 1);
+    
+            // imprimo el mapa como una matriz
+            document.write("MAPA DEL TESORO: <br><br>");
+            for (let i = 0; i < filas; i++) {
+                document.write(mapaDelTesoro[i].join(" ") + "<br>");
+            }
+
+            return mapaDelTesoro;
+        }
+    
+        // pido las dimensiones del mapa al usuario
+        let filas = parseInt(prompt("Introduce el número de filas (mínimo 5):"));
+        let columnas = parseInt(prompt("Introduce el número de columnas (mínimo 5):"));
+    
+        // se valida que las dimensiones sean correctas
+        if (filas < 5 || columnas < 5) {
+            alert("Las dimensiones deben ser al menos 5x5.");
+        } else {
+            let mapaDelTesoro = generarMapaDelTesoro(filas, columnas);
+    
+            // comenzar en la posición 1,1 (índice 0,0)
+            let filaActual = 0;
+            let columnaActual = 0;
+            let pasos = 0;
+    
+            // búsqueda del tesoro comenzando desde la posición (1,1)
+            while (true) {
+                let valorActual = mapaDelTesoro[filaActual][columnaActual];
+    
+                // si se encuentra el tesoro, se termina
+                if (valorActual == (filaActual + 1) * 10 + (columnaActual + 1)) {
+                    document.write(`¡Tesoro encontrado en la posición (${filaActual + 1}, ${columnaActual + 1})!`);
+                    break;
+                }
+    
+                // se determina la siguiente celda según el valor actual
+                let siguienteFila = Math.floor(valorActual / 10) - 1; // fila
+                let siguienteColumna = (valorActual % 10) - 1; // columna
+    
+                // nos movemos a la siguiente celda
+                filaActual = siguienteFila;
+                columnaActual = siguienteColumna;
+            }
+        }
+    </script>
+    
+    
+    
+</body>
+</html>

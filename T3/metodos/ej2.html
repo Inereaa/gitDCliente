@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Nombres con 'J' </title>
+</head>
+<body>
+    <script>
+        /*
+         * Over an array with names, find all entries whose firstname starts with ‘J’,
+         * create projection combined of only the initials of the name and then sort alphabetically.
+        */
+        const nombres = [
+        "John Doe",
+        "Jane Smith",
+        "Alice Johnson",
+        "Jake Brown",
+        "James Wilson",
+        "Martha Davis"
+        ];
+
+        // primero filtro los nombres que empiecen por 'J'
+        const nombresConJ = nombres.filter(nombre => nombre.startsWith("J"));
+
+        // genero un array con todas las iniciales de cada nombre que comience por 'J'
+        const iniciales = [];
+        nombresConJ.forEach(nombre => {
+            const palabras = nombre.split(" ");
+            let inicial = "";
+            palabras.forEach(palabra => {
+                inicial += palabra[0];
+            });
+            iniciales.push(inicial);
+        });
+
+        document.write(iniciales.sort()); // muestro el array de iniciales ordenado
+    </script>
+</body>
+</html>

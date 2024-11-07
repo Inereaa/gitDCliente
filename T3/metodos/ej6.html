@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Square code </title>
+</head>
+<body>
+    <script>
+        function squareCode(mensaje) {
+            // primero eliminamos los espacios del mensaje
+            const msg = mensaje.replace(/\s+/g, '');
+            // se determina la longitud del mensaje
+            const letras = msg.length;
+
+            // Step 2: Calculate dimensions
+            const columns = Math.ceil(Math.sqrt(letras));
+            const rows = Math.ceil(letras / columns);
+
+            // relleno el rectángulo
+            const rectangle = [];
+            for (let i=0; i<rows; i++) {
+                const row = msg.slice(i * columns, i * columns + columns);
+                rectangle.push(row);
+            }
+
+            // reo del código columna a columna
+            const mensajeCodeado = [];
+            for (let j = 0; j < columns; j++) {
+                let column = '';
+                for (let i=0; i<rows; i++) {
+                    if (rectangle[i][j]) {
+                        column += rectangle[i][j];
+                    }
+                }
+                mensajeCodeado.push(column);
+            }
+
+            // y finalmente se juntan todos los elementos del array en un mismo 'string' y separados por espacios
+            return mensajeCodeado.join(' ');
+        }
+
+        const mensaje = "If man was meant to stay on the ground god would have given us roots";
+        document.write(squareCode(mensaje));
+    </script>
+</body>
+</html>

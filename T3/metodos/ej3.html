@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Mapa del tesoro </title>
+</head>
+<body>
+    <script>
+        function busquedaDelTesoro(mapaDelTesoro) {
+            let celdasVisitadas = [];
+            let filaActual = 0;
+            let columnaActual = 0;
+            
+            while (true) {
+                // se obtiene el valor de la celda actual
+                let valorActual = mapaDelTesoro[filaActual][columnaActual];
+
+                // se comprueba si la celda actual tiene el tesoro
+                if (valorActual === (filaActual + 1) * 10 + (columnaActual + 1)) {
+                    return `¡Tesoro encontrado en la posición (${filaActual + 1}, ${columnaActual + 1})!`;
+                }
+
+                // se determina qué celda se comprobará a continuación
+                let siguienteFila = Math.floor(valorActual / 10) - 1; // decenas para la fila
+                let siguienteColumna = (valorActual % 10) - 1; // unidades para la columna
+
+                // moverse a la siguiente celda
+                filaActual = siguienteFila;
+                columnaActual = siguienteColumna;
+            }
+        }
+
+        // mapa del tesoro del ejercicio del PDF
+        const mapaDelTesoro = [
+        [34, 21, 32, 41, 25],
+        [14, 42, 43, 14, 31],
+        [54, 45, 52, 42, 23],
+        [33, 15, 51, 31, 35],
+        [21, 52, 33, 13, 23]
+        ];
+
+        document.write(busquedaDelTesoro(mapaDelTesoro));
+    </script>
+</body>
+</html>
