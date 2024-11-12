@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> DOM eventos 6 </title>
+  <script src="funciones.js"></script>
+  <!-- he añadido un CSS básico para ver el texto y las imágenes centradas y para que estas últimas también fueran del mismo tamaño -->
+  <style>
+    h1 {
+        text-align: center;
+    }
+    div {
+      text-align: center;
+      margin-top: 20px;
+    }
+    img {
+      width: 500px;
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <h1> Galería de imágenes </h1>
+  <div>
+    <img id="imagenActual" src="imagen1.jpeg" alt="Visor de imágenes">
+    <br>
+    
+    <button onclick="imagenAnterior()"> Anterior </button>
+    <button onclick="imagenSiguiente()"> Siguiente </button>
+  </div>
+</body>
+</html>
