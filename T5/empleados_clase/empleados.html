@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Empleados </title>
+</head>
+<body>
+
+    <form onsubmit="return false">
+        <label for="codigo">Código:</label>
+        <input type="text" name="codigo">
+        <br><br>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre">
+        <br><br>
+        <label for="telefono">Telefono:</label>
+        <input type="text" name="telefono">
+        <br><br>
+        <button onclick="agregar()">Agregar</button>
+    </form>
+
+    <script>
+        class Empleado {
+            constructor (codigo, nombre, telefono) {
+                this.codigo = codigo;
+                this.nombre = nombre;
+                this.telefono = telefono;
+            }
+        }
+        const empleados = [];
+
+        function agregar() {
+            let form = document.forms[0];
+
+            let codigo = form.elements.codigo.value;
+            let nombre = form.elements.nombre.value;
+            let telefono = form.elements.telefono.value;
+
+            let nuevo = new Empleado(codigo, nombre, telefono);
+            empleados.push(nuevo);
+        }
+
+        console.log(empleados);
+
+    </script>
+
+</body>
+</html>
