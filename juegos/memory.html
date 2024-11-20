@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Memory </title>
+    <script src="funciones.js"></script>
+    <style>
+        section {
+            font-family: Arial;
+            margin: 0 auto;
+            background-color: rgb(18, 153, 184);
+            width: 70%;
+            text-align: center;
+            font-size: 40px;
+            padding: 5px;
+            color: white;
+        }
+
+        .cartas {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            padding: 40px;
+            justify-items: center;
+            margin-top: -50px;
+        }
+
+        img {
+            width: 80%;
+            transition: width 0.5s linear, margin-top 0.5s linear;
+        }
+
+        img:hover {
+            cursor: pointer;
+            width: 75%;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p style="font-size: 40px;"> JAVASCRIPT PAIRS GAME </p>
+        <p style="font-size: 20px;"> CLICK ANY CARD TO BEGIN </p>
+        <p id="timer"> 00:00 </p>
+
+        <div class="cartas">
+            <img id="carta0" src="reverso.png" onclick="girarCarta(0)">
+            <img id="carta1" src="reverso.png" onclick="girarCarta(1)">
+            <img id="carta2" src="reverso.png" onclick="girarCarta(2)">
+            <img id="carta3" src="reverso.png" onclick="girarCarta(3)">
+            <img id="carta4" src="reverso.png" onclick="girarCarta(4)">
+            <img id="carta5" src="reverso.png" onclick="girarCarta(5)">
+            <img id="carta6" src="reverso.png" onclick="girarCarta(6)">
+            <img id="carta7" src="reverso.png" onclick="girarCarta(7)">
+            <img id="carta8" src="reverso.png" onclick="girarCarta(8)">
+            <img id="carta9" src="reverso.png" onclick="girarCarta(9)">
+        </div>
+        
+    </section>
+</body>
+</html>

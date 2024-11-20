@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Hangman </title>
+    <script src="funciones.js"></script>
+    <style>
+        section {
+            font-family: Arial;
+            margin: 0 auto;
+            background-color: purple;
+            width: 70%;
+            text-align: center;
+            font-size: 40px;
+            padding: 5px;
+            color: white;
+        }
+
+        #letras {
+            display: grid;
+            grid-template-columns: repeat(13, 1fr);
+            gap: 10px;
+            padding: 40px;
+        }
+
+        button {
+            background-color: white;
+            color: purple;
+            border: 2px solid purple;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: purple;
+            color: white;
+            border: 2px solid white;
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body>
+    <section>
+        <p style="font-size: 50px;"> HANGMAN </p>
+        <p> VANILLA JAVASCRIPT HANGMAN </p>
+
+        <p> Use the alphabet below to guess the word. </p>
+
+        <div id="letras">
+            <button id="a" onclick="letra(event)">a</button>
+            <button id="b" onclick="letra(event)">b</button>
+            <button id="c" onclick="letra(event)">c</button>
+            <button id="d" onclick="letra(event)">d</button>
+            <button id="e" onclick="letra(event)">e</button>
+            <button id="f" onclick="letra(event)">f</button>
+            <button id="g" onclick="letra(event)">g</button>
+            <button id="h" onclick="letra(event)">h</button>
+            <button id="i" onclick="letra(event)">i</button>
+            <button id="j" onclick="letra(event)">j</button>
+            <button id="k" onclick="letra(event)">k</button>
+            <button id="l" onclick="letra(event)">l</button>
+            <button id="m" onclick="letra(event)">m</button>
+            <button id="n" onclick="letra(event)">n</button>
+            <button id="o" onclick="letra(event)">o</button>
+            <button id="p" onclick="letra(event)">p</button>
+            <button id="q" onclick="letra(event)">q</button>
+            <button id="r" onclick="letra(event)">r</button>
+            <button id="s" onclick="letra(event)">s</button>
+            <button id="t" onclick="letra(event)">t</button>
+            <button id="u" onclick="letra(event)">u</button>
+            <button id="v" onclick="letra(event)">v</button>
+            <button id="w" onclick="letra(event)">w</button>
+            <button id="x" onclick="letra(event)">x</button>
+            <button id="y" onclick="letra(event)">y</button>
+            <button id="z" onclick="letra(event)">z</button>
+        </div>
+
+        <p> The category is 'Animals' </p>
+
+        <p id="espacios"></p>
+
+        <p id="vidas"> You have 10 lives </p>
+    </section>
+</body>
+</html>
