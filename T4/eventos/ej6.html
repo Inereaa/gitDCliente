@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Hexadecimales </title>
+    <script src="funciones.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        img {
+            width: 300px;
+            margin-top: -20px;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            margin-top: -20px;
+        }
+        table td {
+            min-width: 150px;
+        }
+        table th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h2>Descubre los colores</h1>
+    <img src="titulo.png" alt="titulo">
+    <p>Pasa el ratón sobre el título para cambiar la imagen. Explora los colores en la tabla colocando el puntero sobre los códigos hexadecimales.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Color</th>
+                <th>Código Hexadecimal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Rojo</td>
+                <td>#FF0000</td>
+            </tr>
+            <tr>
+                <td>Verde</td>
+                <td>#00FF00</td>
+            </tr>
+            <tr>
+                <td>Azul</td>
+                <td>#0000FF</td>
+            </tr>
+            <tr>
+                <td>Amarillo</td>
+                <td>#FFFF00</td>
+            </tr>
+            <tr>
+                <td>Cian</td>
+                <td>#00FFFF</td>
+            </tr>
+            <tr>
+                <td>Magenta</td>
+                <td>#FF00FF</td>
+            </tr>
+            <tr>
+                <td>Beige</td>
+                <td>#F5F5DC</td>
+            </tr>
+            <tr>
+                <td>Blanco</td>
+                <td>#FFFFFF</td>
+            </tr>
+            <tr>
+                <td>Gris</td>
+                <td>#808080</td>
+            </tr>
+            <tr>
+                <td>Naranja</td>
+                <td>#FFA500</td>
+            </tr>
+            <tr>
+                <td>Morado</td>
+                <td>#800080</td>
+            </tr>
+            <tr>
+                <td>Rosa</td>
+                <td>#FFC0CB</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        hoverTitulo();
+        tablaColores();
+    </script>
+</body>
+</html>

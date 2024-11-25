@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Mover imágenes </title>
+    <script src="funciones.js"></script>
+    <style>
+        img {
+            width: 100px;
+            cursor: move;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <img src="img1.avif" class="draggable" id="img1" style="left: 50px; top: 50px;">
+    <img src="img2.avif" class="draggable" id="img2" style="left: 200px; top: 50px;">
+    <img src="img3.avif" class="draggable" id="img3" style="left: 350px; top: 50px;">
+
+    <script>moverImagenes()</script>
+</body>
+</html>

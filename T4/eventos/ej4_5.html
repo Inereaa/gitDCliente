@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dibujar con teclas </title>
+    <script src="funciones.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            width: 10px;
+            height: 10px;
+            border: 1px solid #ccc;
+        }
+        p {
+            margin-top: 50px;
+            text-align: center;
+        }
+        button {
+            width: 100px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body onload="canvas()">
+    <p>Usa '<b>Ctrl</b>' para pintar en rojo, '<b>Shift</b>' para pintar en azul y el <b>botón izquierdo</b> del ratón para borrar líneas.</p>
+    <button onclick="limpiar()">Limpiar</button>
+    <table id="canvas"></table>
+</body>
+</html>
