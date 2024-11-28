@@ -1,0 +1,46 @@
+
+/* header */
+header {
+    font-weight: normal;
+    border: none;
+    padding: 0px;
+    background-color: white;
+    position: inherit;
+    margin-left: 0px;
+}
+
+/* dentro del header */
+a {
+    text-decoration: underline;
+}
+
+/* global y fondo */
+* {
+    font-family: sans-serif;
+    background-color: white;
+}
+
+/* aside */
+aside {
+    z-index: -1;
+    background-color: white;
+}
+
+/* sección */
+section {
+    position: inherit;
+    margin-left: 0px;
+}
+
+/* id "marco" */
+#marco {
+    border: none;
+    padding: 0px;
+    background-color: white;
+    margin-top: -70px;
+}
+
+/* id "oculto" */
+#oculto, #ocultoN {
+    visibility: hidden;
+}

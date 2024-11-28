@@ -1,0 +1,63 @@
+
+/* header */
+header {
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 5px;
+    background-color: lightblue;
+    width: 400px;
+    font-size: 15px;
+    position: relative;
+    margin-left: 150px;
+}
+
+/* enlaces dentro del header */
+a {
+    text-decoration: none;
+    background-color: lightblue;
+}
+
+/* global y fondo */
+* {
+    font-family: Arial;
+    background-color: rgb(255, 255, 161);
+}
+
+/* h2 */
+h2 {
+    font-weight: bold;
+}
+
+/* aside */
+aside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 4em;
+    background-color: rgb(141, 212, 253);
+}
+
+/* sección */
+section {
+    position: relative;
+    margin-left: 150px;
+}
+
+/* id "marco" */
+#marco {
+    border: 1px solid black;
+    padding: 5px;
+    background-color: yellow;
+    width: 400px;
+    margin-top: 0;
+}
+
+/* id "oculto" */
+#oculto, #ocultoN {
+    visibility: visible;
+}
+
+#ocultoN {
+    font-weight: bold;
+}
