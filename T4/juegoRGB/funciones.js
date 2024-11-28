@@ -10,7 +10,7 @@ function juegoRGB() {
     }
 
     vidas = 3;
-    document.getElementById('vidas').textContent = "vidas restantes:" +vidas;
+    document.getElementById('vidas').textContent = "vidas restantes: " +vidas;
     document.getElementById('mensaje').textContent = "";
     document.getElementById('reiniciar').style.display = "none";  // se oculta el botón de 'reintentar'
     juegoTerminado = false;
@@ -55,7 +55,7 @@ function juegoRGB() {
             juegoTerminado = true;
         } else {
             vidas--;
-            document.getElementById('vidas').textContent = "vidas restantes:" +vidas;
+            document.getElementById('vidas').textContent = "vidas restantes: " +vidas;
             if (vidas > 0) {
                 document.getElementById('mensaje').textContent = "¡Incorrecto! Inténtalo de nuevo.";
             } else {
